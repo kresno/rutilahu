@@ -11,25 +11,17 @@ class Login extends CI_Controller{
 
     public function validasi()
     {
-      // $this->form_validation->set_rules('username', 'Username', 'trim|required');
-      // $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_login');
+      $this->form_validation->set_rules('username', 'Username', 'trim|required');
+      $this->form_validation->set_rules('password', 'Password', 'trim|required|callback_check_login');
   
-      //     if($this->form_validation->run() == FALSE)
-      //     {
-      //         $this->load->view('auth/login');
-      //     } else {
-      //   $admin_log = $this->auth->is_login_admin();
-      //   if($admin_log['level_id'] == 2)
-      //   {
-      //     redirect('pd/dashboard', 'refresh');
-      //   } else if($admin_log['level_id'] > 3){
-      //     redirect('bidang/dashboard', 'refresh');
-      //   } else{
-      //     redirect('superadmin/dashboard', 'refresh');
-      //   }
-      //     }
-      $this->session->set_flashdata("sukses","Berhasil Login"); //pesan yang akan ke halaman redirect
-      redirect(base_url('admin/dashboard'));
+      if($this->form_validation->run() == FALSE)
+      {
+        $this->load->view('auth/login');
+      } else {
+
+        $admin_log = $this->auth->is_login_admin();
+        redirect('admin/dashboard', 'refresh');
+      }
     }
 
     function check_login($password)
@@ -47,19 +39,10 @@ class Login extends CI_Controller{
           $sess_array = array (
             'session_id' => $_COOKIE['ci_session'],
             'user_id' => $row->id,
-            'opd_id' => $row->opd_id,
-            'username' => $row->username,
-            'level_id' => $row->level_id
+            'username' => $row->username
           );
           $this->session->set_userdata('is_logged_admin', $sess_array);
         }
-        $insert['pengguna'] = $this->input->post('username');
-        $insert['aktivitas'] = "Login ke Siwardah";
-        $insert['waktu'] = date("Y-m-d H:i:s");
-        $insert['address'] = $this->input->ip_address();
-  
-        $this->M_history->insert($insert);
-  
         return true;
       } else {
         $this->form_validation->set_message('check_login', '<div class="alert alert-danger display-show">

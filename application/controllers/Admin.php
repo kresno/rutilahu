@@ -16,7 +16,7 @@ class Admin extends CI_Controller
     $this->load->model('M_Jenis');
     $this->load->model('M_Kerusakan');
     $this->load->model('M_Kpm');
-    // $this->load->library('Auth');
+    $this->load->library('Auth');
   }
 
 

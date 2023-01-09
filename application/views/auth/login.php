@@ -11,7 +11,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-        <img src="<?php echo base_url('assets/img/logo_garut.png'); ?>" alt="Siwardah Logo" class="brand-image img-circle elevation-3"
+        <img src="<?php echo base_url('assets/img/logo_garut.png'); ?>" alt="Rutilahu Logo" class="brand-image img-circle elevation-3"
              style="opacity: .8" width="50px">
             Rutilahu
         </div>
@@ -23,9 +23,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
                     Sistem Informasi Rutilahu
                 </p>
 
-                <form action="<?php echo base_url('login/validasi'); ?>" method="post">
+                <form action="<?php echo base_url('login/validasi'); ?>" method="POST">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="username" placeholder="Username" autofocus autocomplete="username">
+                        <input type="text" class="form-control" name="username" placeholder="Username" autofocus autocomplete="username" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -33,7 +33,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Password">
+                        <input type="password" class="form-control" name="password" placeholder="Password" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>

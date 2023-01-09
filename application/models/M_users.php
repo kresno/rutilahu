@@ -11,11 +11,10 @@ class M_users extends CI_Model
 
   function checkAkun($username, $password)
   {
-    $this->db->select("id, username, level_id, opd_id");
-    $this->db->from("users");
+    $this->db->select("id, username");
+    $this->db->from("user");
     $this->db->where('username', $username);
     $this->db->where('password', md5($password));
-    $this->db->where('status', 'A');
     $this->db->limit(1);
     $query = $this->db->get();
 		if ($query->num_rows() == 1){
