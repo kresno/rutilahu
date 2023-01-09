@@ -135,6 +135,7 @@ class Admin extends CI_Controller
       $data['foto_awal'] = $this->upload->data('file_name');
     }
 
+    $data['kode'] = "RTLH-".uniqid();
     $data['id_kec'] = $this->input->post('kecamatan');
     $data['id_desa'] = $this->input->post('desa');
     $data['jenis_penanganan'] = $this->input->post('jenis_penanganan');
