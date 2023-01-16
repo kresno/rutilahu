@@ -113,52 +113,39 @@ class Admin extends CI_Controller
 
     $this->load->library('upload', $config);
 
-    var_dump($this->upload->do_upload('foto_ktp'));
-    $data['foto_ktp'] = $this->upload->data('file_name');
-    echo $data['foto_ktp'];
+    if(!$this->upload->do_upload('foto_ktp'))
+    {
+      $data['foto_ktp'] = "";
+    } else {
+      $data['foto_ktp'] = $this->upload->data('file_name');
+    }
+
+    if(!$this->upload->do_upload('foto_kk'))
+    {
+      $data['foto_kk'] = "";
+    } else {
+      $data['foto_kk'] = $this->upload->data('file_name');
+    }
+
+    if(!$this->upload->do_upload('foto_awal'))
+    {
+      $data['foto_awal'] = "";
+    } else {
+      $data['foto_awal'] = $this->upload->data('file_name');
+    }
+
+    $data['kode'] = "RTLH-".uniqid();
+    $data['id_kec'] = $this->input->post('kecamatan');
+    $data['id_desa'] = $this->input->post('desa');
+    $data['jenis_penanganan'] = $this->input->post('jenis_penanganan');
+    $data['nama'] = $this->input->post('nama');
+    $data['tahun'] = $this->input->post('tahun');
+    $data['alamat_lengkap'] = $this->input->post('alamat');
+    $data['nik'] = $this->input->post('nik');
+    $data['no_kk'] = $this->input->post('no_kk');
     
-    var_dump($this->upload->do_upload('foto_kk'));
-    $data['foto_kk'] = $this->upload->data('file_name');
-    echo $data['foto_kk'];
-
-    var_dump($this->upload->do_upload('foto_awal'));
-    $data['foto_awal'] = $this->upload->data('file_name');
-    echo $data['foto_awal'];
-
-
-    // if(!$this->upload->do_upload('foto_ktp'))
-    // {
-    //   $data['foto_ktp'] = "";
-    // } else {
-    //   $data['foto_ktp'] = $this->upload->data('file_name');
-    // }
-
-    // if(!$this->upload->do_upload('foto_kk'))
-    // {
-    //   $data['foto_kk'] = "";
-    // } else {
-    //   $data['foto_kk'] = $this->upload->data('file_name');
-    // }
-
-    // if(!$this->upload->do_upload('foto_awal'))
-    // {
-    //   $data['foto_awal'] = "";
-    // } else {
-    //   $data['foto_awal'] = $this->upload->data('file_name');
-    // }
-
-    // $data['kode'] = "RTLH-".uniqid();
-    // $data['id_kec'] = $this->input->post('kecamatan');
-    // $data['id_desa'] = $this->input->post('desa');
-    // $data['jenis_penanganan'] = $this->input->post('jenis_penanganan');
-    // $data['nama'] = $this->input->post('nama');
-    // $data['tahun'] = $this->input->post('tahun');
-    // $data['alamat_lengkap'] = $this->input->post('alamat');
-    // $data['nik'] = $this->input->post('nik');
-    // $data['no_kk'] = $this->input->post('no_kk');
-    
-    // $this->db->insert('kpm', $data);
-    // redirect(base_url('admin/create_rumah'));  
+    $this->db->insert('kpm', $data);
+    echo "<script>alert('Berhasil Menyetujui Transaksi') ; window.location.href = '../create_rumah' </script>";
   }
 
 
