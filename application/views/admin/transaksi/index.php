@@ -33,6 +33,7 @@
                   <tr>
                     <th>No</th>
                     <th>Jenis Penanganan</th>
+                    <th>Kode</th>
                     <th>Kecamatan</th>
                     <th>Desa</th>
                     <th>Alamat Lengkap</th>
@@ -49,6 +50,7 @@
                     <tr>
                         <td> <?php echo ++$count; ?> </td>
                         <td> <?php echo $kpm->jenis_penanganan; ?> </td>
+                        <td> <?php echo $kpm->kode; ?> </td>
                         <td> <?php echo $kpm->nama_kecamatan; ?> </td>
                         <td> <?php echo $kpm->nama_desa; ?> </td>
                         <td> <?php echo $kpm->alamat_lengkap; ?> </td>
