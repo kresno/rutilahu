@@ -145,7 +145,7 @@ class Admin extends CI_Controller
     $data['no_kk'] = $this->input->post('no_kk');
     
     $this->db->insert('kpm', $data);
-    echo "<script>alert('Berhasil Menyetujui Transaksi') ; window.location.href = '../create_rumah' </script>";
+    echo "<script>alert('Berhasil Menyetujui Transaksi') ; window.location.href = '../admin/create_rumah' </script>";
   }
 
 
