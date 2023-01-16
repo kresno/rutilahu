@@ -125,6 +125,7 @@ class Admin extends CI_Controller
     $data['foto_awal'] = $this->upload->data('file_name');
     echo $data['foto_awal'];
 
+
     // if(!$this->upload->do_upload('foto_ktp'))
     // {
     //   $data['foto_ktp'] = "";

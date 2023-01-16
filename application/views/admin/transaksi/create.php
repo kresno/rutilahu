@@ -92,7 +92,7 @@
                 <div class="form-group">
                   <label for="foto_ktp">Bukti Foto KTP (Masukkan Gambar dengan maksimal ukuran 2MB)</label>
                   <div class="input-group custom-file-button">
-                    <input type="file" class="form-control" id="inputGroupFile" id="foto_ktp" name="foto_ktp" required>
+                    <input type="file" class="form-control" id="inputGroupFile" id="foto_ktp" name="foto_ktp">
                   </div>
                 </div>
                 <!-- /.form-group -->
@@ -100,7 +100,7 @@
                 <div class="form-group">
                   <label for="foto_kk">Bukti Foto KK</label>
                   <div class="input-group custom-file-button">
-                    <input type="file" class="form-control" id="inputGroupFile" id="foto_kk" name="foto_kk" required>
+                    <input type="file" class="form-control" id="inputGroupFile" id="foto_kk" name="foto_kk">
                   </div>
                 </div>
                 <!-- /.form-group -->
